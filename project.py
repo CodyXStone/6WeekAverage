@@ -1,5 +1,5 @@
 class RollingAverage:
-    def __init__(self):
+    def __init__(self): #Initialize max number 6
         self.numbers = []
         self.max_size = 6
 
@@ -14,16 +14,15 @@ class RollingAverage:
             return 0
         return sum(self.numbers) / len(self.numbers)
 
-# Example usage
 if __name__ == "__main__":
     rolling_avg = RollingAverage()
     while True:
         try:
-            user_input = input("Enter a number (or type 'exit' to quit): ")
+            user_input = input("Enter a number (or type 'exit' to quit): ") #Ask for input
             if user_input.lower() == 'exit':
                 break
             number = float(user_input)  # Convert input to float
             average = rolling_avg.add_number(number)
-            print(f"Current rolling average of last 6 numbers: {average:.2f}")
+            print(f"Current rolling average of last 6 numbers: {average:.2f}") #Return the average of the number set.
         except ValueError:
             print("Please enter a valid number.")
